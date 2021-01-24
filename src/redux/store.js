@@ -2,9 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import phonebookReducer from './phonebook/phonebookReducer';
 
 const store = configureStore({
-  reducer: {
-    phonebook: phonebookReducer,
-  },
+  reducer: phonebookReducer,
 });
 
 export default store;

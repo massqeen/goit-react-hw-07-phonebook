@@ -4,7 +4,7 @@ import InputPhone from 'components/InputPhone';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 import 'react-toastify/dist/ReactToastify.css';
 import { Editor, EditorButton, Input } from './ContactEditorStyles';
-import { addContact } from 'redux/phonebook/phonebookReducer';
+import operations from 'redux/phonebook/phonebookOperations';
 import { useDispatch, useSelector } from 'react-redux';
 import { getStateContacts } from 'redux/phonebook/phonebookSelectors';
 
@@ -48,7 +48,7 @@ const ContactEditor = () => {
       notify(`Номер ${number} уже сохранен в телефонной книге`);
       return;
     }
-    dispatch(addContact(name, number));
+    dispatch(operations.addContact(name, number));
   };
 
   const handleChangeName = (e) => {

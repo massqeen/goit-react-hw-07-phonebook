@@ -1,5 +1,6 @@
-export const getStateContacts = (state) => state.phonebook.contacts;
-export const getStateFilter = (state) => state.phonebook.filter;
+export const getStateContacts = (state) => state.contacts;
+export const getStateFilter = (state) => state.filter;
+export const getIsLoading = (state) => state.isLoading;
 
 export const getVisibleContacts = (state) => {
   const contacts = getStateContacts(state);

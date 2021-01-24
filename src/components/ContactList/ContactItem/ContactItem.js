@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Item, Text } from './ContactItemStyles';
 import Button from 'components/Button';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/phonebook/phonebookReducer';
+import operations from 'redux/phonebook/phonebookOperations';
 
 const ContactItem = ({ name, number, id = '' }) => {
   const dispatch = useDispatch();
@@ -10,7 +10,10 @@ const ContactItem = ({ name, number, id = '' }) => {
     <Item>
       <Text>{name}: </Text>
       <Text>{number}</Text>
-      <Button type="button" onClick={() => dispatch(deleteContact(id))}>
+      <Button
+        type="button"
+        onClick={() => dispatch(operations.deleteContact(id))}
+      >
         Удалить
       </Button>
     </Item>
